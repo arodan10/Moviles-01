@@ -7,6 +7,7 @@ import androidx.compose.foundation.shape.CircleShape
 
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -17,6 +18,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.currentBackStackEntryAsState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import pe.edu.upeu.asistenciaupeujc.R
@@ -33,6 +35,13 @@ fun AppDrawer(
     items: List<Destinations>,
     modifier: Modifier = Modifier
 ) {
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = navBackStackEntry?.destination?.route
+    if (currentRoute == null || currentRoute == Destinations.Login.route)
+    {
+        return
+    }
+
     ModalDrawerSheet(modifier = Modifier) {
         DrawerHeader(modifier)
         Spacer(modifier = Modifier.padding(dimensionResource(id = R.dimen.spacer_padding)))

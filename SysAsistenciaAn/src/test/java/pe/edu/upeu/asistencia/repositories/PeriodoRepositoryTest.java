@@ -76,11 +76,11 @@ public class PeriodoRepositoryTest {
     
     @Test
     public void findLocalByNameIgnoreCaseNotFound() {
-        Optional<Periodo> local = periodoRepository.findByNombre("2021-1");
+        Optional<Periodo> local = periodoRepository.findByNombre("2021-2");
         //assertEquals(local, Optional.empty());
-        assertEquals(local.get().getNombre(),"2021-1");
+        assertEquals(local.get().getNombre(),"2021-2");
         System.out.println("local.get() = " + local.get());
         //fail("The test case is a prototype.");
-    }    
+    }  
 
 }

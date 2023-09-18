@@ -16,5 +16,9 @@ public class UsuarioDto {
     private String apellidos;
     private String correo;
     private String token;
+    private String dni;
+    private String perfilPrin;
+    private String estado;
+    private String offlinex;
 
 }

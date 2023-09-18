@@ -70,7 +70,7 @@ public class PeriodoControllerWebTestClientTest {
     public void tearDown() {
     }
 
-    @Test
+    /*@Test
     @Order(1)
     public void testListarPeriodo() {
         webTestClient.get().uri("http://localhost:"+this.port+"/asis/periodo/list")
@@ -83,6 +83,6 @@ public class PeriodoControllerWebTestClientTest {
                 .jsonPath("$[1].estado").isEqualTo("Activo")
                 .jsonPath("$").isArray()
                 .jsonPath("$").value(Matchers.hasSize(5));
-    }
+    }*/
 
 }

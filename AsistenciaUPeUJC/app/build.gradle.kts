@@ -23,6 +23,10 @@ android {
         //Agregado Inicio
         javaCompileOptions {
             annotationProcessorOptions {
+                arguments += mapOf(
+                    "room.schemaLocation" to "$projectDir/schemas",
+                    "room.incremental" to "true"
+                )
                // arguments += ["room.schemaLocation":
                 //"$projectDir/schemas".toString()]
             }
@@ -79,6 +83,8 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
+    val appcompat_version = "1.6.1"
+    implementation("androidx.appcompat:appcompat:$appcompat_version") //Agregado recien
 
     //agregado Navigation
     val navCompose = "2.7.1" //old 2.7.0-beta01
@@ -90,4 +96,47 @@ dependencies {
     //Agregados
     implementation ("com.google.dagger:hilt-android:2.47")
     kapt ("com.google.dagger:hilt-compiler:2.47")
+
+//Agregado Dagger - Hilt
+    implementation ("com.google.dagger:hilt-android:2.47")
+    kapt ("com.google.dagger:hilt-compiler:2.47")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation("com.valentinilk.shimmer:compose-shimmer:1.0.5")
+    implementation ("io.coil-kt:coil-compose:2.4.0")
+//Otros adicionales compose
+    implementation ("androidx.compose.ui:ui-tooling")
+    implementation ("androidx.compose.foundation:foundation")
+    implementation ("androidx.compose.runtime:runtime-livedata")
+//Para trabajar con contraint layout
+    implementation ("androidx.constraintlayout:constraintlayout:2.2.0-alpha10")
+    implementation ("androidx.constraintlayout:constraintlayout-compose:1.1.0-alpha10")
+//Para trabajar con camara
+    val camerax_version = "1.2.3"
+    implementation ("androidx.camera:camera-core:${camerax_version}")
+    implementation ("androidx.camera:camera-camera2:${camerax_version}")
+    implementation ("androidx.camera:camera-lifecycle:${camerax_version}")
+    implementation ("androidx.camera:camera-view:${camerax_version}")
+
+//Barcode
+    implementation ("com.google.mlkit:barcode-scanning:17.1.0")
+//Location
+    implementation ("com.google.android.gms:play-services-location:21.0.1")
+//Manager permissions
+    implementation ("com.google.accompanist:accompanist-permissions:0.30.1")
+//Moshi
+    implementation ("com.squareup.moshi:moshi-kotlin:1.14.0")
+    implementation ("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
+    kapt ("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
+//Formularios
+    implementation ("com.github.k0shk0sh:compose-easyforms:0.2.0")
+// Room https://developer.android.com/jetpack/androidx/releases/room
+    val room_version = "2.5.2"
+    implementation ("androidx.room:room-runtime:$room_version")
+    annotationProcessor ("androidx.room:room-compiler:$room_version")
+    implementation ("androidx.room:room-ktx:$room_version")
+    kapt ("androidx.room:room-compiler:$room_version")
+// Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
 }

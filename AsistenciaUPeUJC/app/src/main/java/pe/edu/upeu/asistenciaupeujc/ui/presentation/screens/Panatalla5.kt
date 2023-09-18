@@ -29,7 +29,7 @@ fun Pantalla5() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "PANTALLA 5",
+            text = "PANTALLA 5hhhhh",
             style = TextStyle(
                 color = Color.Black, fontSize = 42.sp,
                 fontWeight = FontWeight.Black
